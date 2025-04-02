@@ -276,10 +276,7 @@ body {
 }
 
 /* Media Queries for Responsive Design */
-@media (max-width: 1024px) {
-    .layout-grid {
-        grid-template-columns: 1fr;
-    }
+@media (max-width: 800px) {
 
     .sidebar {
         grid-column: 1 / -1;
