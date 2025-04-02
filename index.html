@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rangoon Bistro - Portland, OR</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js"></script>
+</head>
+<body>
+    <div class="layout-grid">
+        <aside class="sidebar">
+            <section class="restaurant-info">
+                <div class="logo-container">
+                    <img class="restaurant-logo" src="images/logo.png" alt="Rangoon Bistro Logo">
+                </div>
+                <div class="restaurant-details">
+                    <h1>Rangoon Bistro</h1>
+                    <p class="restaurant-type">Restaurant · <span>Open until 10 PM</span></p>
+                    <p class="restaurant-address">3747 N Mississippi Ave, Portland</p>
+                    <div class="button-group">
+                        <button class="more-info">···</button>
+                        <button class="add-to-local">
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 1V11M1 6H11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="menu-categories">
+                <div class="menu-period">
+                    <h2>Lunch</h2>
+                    <p class="time-slot">11:00am — 3:00pm</p>
+                </div>
+                <div class="category-container">
+                    <div class="category active" data-category="thoke">
+                        <img src="images/category-thoke.webp" alt="Thoke Icon">
+                        <span>Thoke</span>
+                    </div>
+                    <div class="category" data-category="noodles">
+                        <img src="images/category-noodles.webp" alt="Noodles Icon">
+                        <span>Noodles</span>
+                    </div>
+                    <div class="category" data-category="curry">
+                        <img src="images/category-curry.webp" alt="Curry Icon">
+                        <span>Curry</span>
+                    </div>
+                    <div class="category" data-category="fried-chicken">
+                        <img src="images/category-fried-chicken.webp" alt="Fried Chicken Icon">
+                        <span>Fried Chicken</span>
+                    </div>
+                    <div class="category" data-category="sides">
+                        <img src="images/category-sides.webp" alt="Sides Icon">
+                        <span>Sides</span>
+                    </div>
+                    <div class="category" data-category="cocktails">
+                        <img src="images/category-cocktail.webp" alt="Cocktails Icon">
+                        <span>Cocktails</span>
+                    </div>
+                    <div class="category" data-category="non-alcoholic">
+                        <img src="images/category-nonalcoholic.webp" alt="Non-Alcoholic Icon">
+                        <span>Non-Alcoholic</span>
+                    </div>
+                </div>
+            </section>
+        </aside>
+
+        <main class="main-content">
+            <section class="menu-section">
+                <h3 id="thoke" class="category-heading">Thoke</h3>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="image-container">
+                            <img src="images/lahpet-salad.webp" alt="Lahpet Salad">
+                            <button class="add-button">
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 1V11M1 6H11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="item-details">
+                            <h3>Lahpet Salad</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur. Odio porta elit aenean diam in integer pharetra sit ultrices femdh...</p>
+                            <div class="price">
+                                <span class="original">$15.00</span>
+                                <span class="discounted">$15.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="image-container">
+                            <img src="images/ginger-salad.webp" alt="Ginger Salad">
+                            <button class="add-button">
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 1V11M1 6H11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="item-details">
+                            <h3>Ginger Salad</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur. Odio porta elit aenean diam in integer pharetra sit ultrices femdh...</p>
+                            <div class="price">
+                                <span class="original">$15.00</span>
+                                <span class="discounted">$15.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="image-container">
+                            <img src="images/tofu-salad.webp" alt="Tofu Salad">
+                            <button class="add-button">
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 1V11M1 6H11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="item-details">
+                            <h3>Tofu Salad</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur. Odio porta elit aenean diam in integer pharetra sit ultrices femdh...</p>
+                            <div class="price">
+                                <span class="original">$15.00</span>
+                                <span class="discounted">$15.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3 id="noodles" class="category-heading">Noodles</h3>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="image-container">
+                            <img src="images/lahpet-salad.webp" alt="Lahpet Salad">
+                            <button class="add-button">
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 1V11M1 6H11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="item-details">
+                            <h3>Lahpet Salad</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur. Odio porta elit aenean diam in integer pharetra sit ultrices femdh...</p>
+                            <div class="price">
+                                <span class="original">$15.00</span>
+                                <span class="discounted">$15.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="image-container">
+                            <img src="images/ginger-salad.webp" alt="Ginger Salad">
+                            <button class="add-button">
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 1V11M1 6H11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="item-details">
+                            <h3>Ginger Salad</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur. Odio porta elit aenean diam in integer pharetra sit ultrices femdh...</p>
+                            <div class="price">
+                                <span class="original">$15.00</span>
+                                <span class="discounted">$15.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="image-container">
+                            <img src="images/tofu-salad.webp" alt="Tofu Salad">
+                            <button class="add-button">
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 1V11M1 6H11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="item-details">
+                            <h3>Tofu Salad</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur. Odio porta elit aenean diam in integer pharetra sit ultrices femdh...</p>
+                            <div class="price">
+                                <span class="original">$15.00</span>
+                                <span class="discounted">$15.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="image-container">
+                            <img src="images/lahpet-salad.webp" alt="Lahpet Salad">
+                            <button class="add-button">
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 1V11M1 6H11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="item-details">
+                            <h3>Lahpet Salad</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur. Odio porta elit aenean diam in integer pharetra sit ultrices femdh...</p>
+                            <div class="price">
+                                <span class="original">$15.00</span>
+                                <span class="discounted">$15.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="image-container">
+                            <img src="images/ginger-salad.webp" alt="Ginger Salad">
+                            <button class="add-button">
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 1V11M1 6H11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="item-details">
+                            <h3>Ginger Salad</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur. Odio porta elit aenean diam in integer pharetra sit ultrices femdh...</p>
+                            <div class="price">
+                                <span class="original">$15.00</span>
+                                <span class="discounted">$15.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="image-container">
+                            <img src="images/tofu-salad.webp" alt="Tofu Salad">
+                            <button class="add-button">
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 1V11M1 6H11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="item-details">
+                            <h3>Tofu Salad</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur. Odio porta elit aenean diam in integer pharetra sit ultrices femdh...</p>
+                            <div class="price">
+                                <span class="original">$15.00</span>
+                                <span class="discounted">$15.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="image-container">
+                            <img src="images/lahpet-salad.webp" alt="Lahpet Salad">
+                            <button class="add-button">
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 1V11M1 6H11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="item-details">
+                            <h3>Lahpet Salad</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur. Odio porta elit aenean diam in integer pharetra sit ultrices femdh...</p>
+                            <div class="price">
+                                <span class="original">$15.00</span>
+                                <span class="discounted">$15.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="image-container">
+                            <img src="images/tofu-salad.webp" alt="Tofu Salad">
+                            <button class="add-button">
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 1V11M1 6H11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="item-details">
+                            <h3>Tofu Salad</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur. Odio porta elit aenean diam in integer pharetra sit ultrices femdh...</p>
+                            <div class="price">
+                                <span class="original">$15.00</span>
+                                <span class="discounted">$15.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <h3 id="curry" class="category-heading">Curry</h3>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="image-container">
+                            <img src="images/lahpet-salad.webp" alt="Lahpet Salad">
+                            <button class="add-button">
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 1V11M1 6H11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="item-details">
+                            <h3>Lahpet Salad</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur. Odio porta elit aenean diam in integer pharetra sit ultrices femdh...</p>
+                            <div class="price">
+                                <span class="original">$15.00</span>
+                                <span class="discounted">$15.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="image-container">
+                            <img src="images/ginger-salad.webp" alt="Ginger Salad">
+                            <button class="add-button">
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 1V11M1 6H11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="item-details">
+                            <h3>Ginger Salad</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur. Odio porta elit aenean diam in integer pharetra sit ultrices femdh...</p>
+                            <div class="price">
+                                <span class="original">$15.00</span>
+                                <span class="discounted">$15.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="image-container">
+                            <img src="images/tofu-salad.webp" alt="Tofu Salad">
+                            <button class="add-button">
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 1V11M1 6H11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="item-details">
+                            <h3>Tofu Salad</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur. Odio porta elit aenean diam in integer pharetra sit ultrices femdh...</p>
+                            <div class="price">
+                                <span class="original">$15.00</span>
+                                <span class="discounted">$15.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="image-container">
+                            <img src="images/lahpet-salad.webp" alt="Lahpet Salad">
+                            <button class="add-button">
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 1V11M1 6H11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="item-details">
+                            <h3>Lahpet Salad</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur. Odio porta elit aenean diam in integer pharetra sit ultrices femdh...</p>
+                            <div class="price">
+                                <span class="original">$15.00</span>
+                                <span class="discounted">$15.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="image-container">
+                            <img src="images/ginger-salad.webp" alt="Ginger Salad">
+                            <button class="add-button">
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 1V11M1 6H11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="item-details">
+                            <h3>Ginger Salad</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur. Odio porta elit aenean diam in integer pharetra sit ultrices femdh...</p>
+                            <div class="price">
+                                <span class="original">$15.00</span>
+                                <span class="discounted">$15.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="image-container">
+                            <img src="images/tofu-salad.webp" alt="Tofu Salad">
+                            <button class="add-button">
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 1V11M1 6H11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="item-details">
+                            <h3>Tofu Salad</h3>
+                            <p>Lorem ipsum dolor sit amet consectetur. Odio porta elit aenean diam in integer pharetra sit ultrices femdh...</p>
+                            <div class="price">
+                                <span class="original">$15.00</span>
+                                <span class="discounted">$15.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 id="fried-chicken" class="category-heading">Fried Chicken</h3>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="image-container">
+                            <img src="images/lahpet-salad.webp" alt="Classic Fried Chicken">
+                            <button class="add-button">
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 1V11M1 6H11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="item-details">
+                            <h3>Classic Fried Chicken</h3>
+                            <p>Crispy buttermilk fried chicken with our secret blend of spices. Served with house-made sauce.</p>
+                            <div class="price">
+                                <span class="original">$16.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="image-container">
+                            <img src="images/lahpet-salad.webp" alt="Spicy Fried Chicken">
+                            <button class="add-button">
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 1V11M1 6H11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="item-details">
+                            <h3>Spicy Fried Chicken</h3>
+                            <p>Our signature fried chicken tossed in hot sauce with pickled vegetables.</p>
+                            <div class="price">
+                                <span class="original">$17.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="image-container">
+                            <img src="images/lahpet-salad.webp" alt="Honey Garlic Chicken">
+                            <button class="add-button">
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 1V11M1 6H11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="item-details">
+                            <h3>Honey Garlic Chicken</h3>
+                            <p>Crispy fried chicken glazed with honey garlic sauce and sesame seeds.</p>
+                            <div class="price">
+                                <span class="original">$17.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="image-container">
+                            <img src="images/lahpet-salad.webp" alt="Chicken Sandwich">
+                            <button class="add-button">
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 1V11M1 6H11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="item-details">
+                            <h3>Chicken Sandwich</h3>
+                            <p>Crispy fried chicken breast with lettuce, pickles, and special sauce on a brioche bun.</p>
+                            <div class="price">
+                                <span class="original">$15.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 id="sides" class="category-heading">Sides</h3>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="image-container">
+                            <img src="images/lahpet-salad.webp" alt="Crispy Fries">
+                            <button class="add-button">
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 1V11M1 6H11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="item-details">
+                            <h3>Crispy Fries</h3>
+                            <p>Hand-cut potatoes fried to perfection and seasoned with our house spice blend.</p>
+                            <div class="price">
+                                <span class="original">$6.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="image-container">
+                            <img src="images/lahpet-salad.webp" alt="Coleslaw">
+                            <button class="add-button">
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 1V11M1 6H11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="item-details">
+                            <h3>Coleslaw</h3>
+                            <p>Fresh cabbage and carrots in a creamy dressing with a hint of citrus.</p>
+                            <div class="price">
+                                <span class="original">$5.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="image-container">
+                            <img src="images/lahpet-salad.webp" alt="Mac & Cheese">
+                            <button class="add-button">
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 1V11M1 6H11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="item-details">
+                            <h3>Mac & Cheese</h3>
+                            <p>Creamy three-cheese blend with a crispy breadcrumb topping.</p>
+                            <div class="price">
+                                <span class="original">$8.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="image-container">
+                            <img src="images/lahpet-salad.webp" alt="Cornbread">
+                            <button class="add-button">
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 1V11M1 6H11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="item-details">
+                            <h3>Cornbread</h3>
+                            <p>Sweet and savory cornbread served warm with honey butter.</p>
+                            <div class="price">
+                                <span class="original">$5.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 id="cocktails" class="category-heading">Cocktails</h3>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="image-container">
+                            <img src="images/lahpet-salad.webp" alt="Spiced Mule">
+                            <button class="add-button">
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 1V11M1 6H11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="item-details">
+                            <h3>Spiced Mule</h3>
+                            <p>House-infused ginger vodka, lime juice, spiced syrup, ginger beer.</p>
+                            <div class="price">
+                                <span class="original">$12.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="image-container">
+                            <img src="images/lahpet-salad.webp" alt="Lemongrass Martini">
+                            <button class="add-button">
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 1V11M1 6H11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="item-details">
+                            <h3>Lemongrass Martini</h3>
+                            <p>Citrus vodka, lemongrass syrup, lime juice, fresh mint.</p>
+                            <div class="price">
+                                <span class="original">$13.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="image-container">
+                            <img src="images/lahpet-salad.webp" alt="Tamarind Old Fashioned">
+                            <button class="add-button">
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 1V11M1 6H11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="item-details">
+                            <h3>Tamarind Old Fashioned</h3>
+                            <p>Bourbon, tamarind syrup, aromatic bitters, orange peel.</p>
+                            <div class="price">
+                                <span class="original">$14.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="image-container">
+                            <img src="images/lahpet-salad.webp" alt="Coconut Margarita">
+                            <button class="add-button">
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 1V11M1 6H11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="item-details">
+                            <h3>Coconut Margarita</h3>
+                            <p>Tequila, coconut cream, lime juice, chili salt rim.</p>
+                            <div class="price">
+                                <span class="original">$13.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <h3 id="non-alcoholic" class="category-heading">Non-Alcoholic</h3>
+                <div class="menu-grid">
+                    <div class="menu-item">
+                        <div class="image-container">
+                            <img src="images/lahpet-salad.webp" alt="Ginger Lemonade">
+                            <button class="add-button">
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 1V11M1 6H11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="item-details">
+                            <h3>Ginger Lemonade</h3>
+                            <p>Fresh squeezed lemonade with house-made ginger syrup.</p>
+                            <div class="price">
+                                <span class="original">$5.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="image-container">
+                            <img src="images/lahpet-salad.webp" alt="Sparkling Hibiscus">
+                            <button class="add-button">
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 1V11M1 6H11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="item-details">
+                            <h3>Sparkling Hibiscus</h3>
+                            <p>Hibiscus tea with sparkling water and lime.</p>
+                            <div class="price">
+                                <span class="original">$4.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="image-container">
+                            <img src="images/lahpet-salad.webp" alt="Mango Lassi">
+                            <button class="add-button">
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 1V11M1 6H11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="item-details">
+                            <h3>Mango Lassi</h3>
+                            <p>Fresh mango blended with yogurt and cardamom.</p>
+                            <div class="price">
+                                <span class="original">$6.00</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="menu-item">
+                        <div class="image-container">
+                            <img src="images/lahpet-salad.webp" alt="Thai Iced Tea">
+                            <button class="add-button">
+                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M6 1V11M1 6H11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="item-details">
+                            <h3>Thai Iced Tea</h3>
+                            <p>Classic Thai tea with coconut cream.</p>
+                            <div class="price">
+                                <span class="original">$5.00</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
