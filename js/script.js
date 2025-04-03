@@ -1,7 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     const categories = document.querySelectorAll('.category');
     const categoryHeadings = Array.from(document.querySelectorAll('.category-heading'));
-    let isScrollLocked = false;
+    let lastClickTime = 0;
+    const SCROLL_LOCK_DURATION = 1000; // 1 second lock duration
     
     // Click handling for categories
     categories.forEach(category => {
@@ -13,18 +14,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const heading = document.getElementById(categoryId);
             
             if (heading) {
-                // Lock scroll updates temporarily
-                isScrollLocked = true;
+                // Update the last click time
+                lastClickTime = Date.now();
                 
                 heading.scrollIntoView({
                     behavior: 'smooth',
                     block: 'start'
                 });
-
-                // Release the lock after the scroll animation (roughly 1 second)
-                setTimeout(() => {
-                    isScrollLocked = false;
-                }, 1000);
             }
         });
     });
@@ -34,8 +30,8 @@ document.addEventListener('DOMContentLoaded', () => {
     let lastKnownScrollPosition = 0;
 
     function updateActiveCategory() {
-        // Don't update if scroll is locked
-        if (isScrollLocked) {
+        // Check if we're still within the lock period of the last click
+        if (Date.now() - lastClickTime < SCROLL_LOCK_DURATION) {
             ticking = false;
             return;
         }
