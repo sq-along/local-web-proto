@@ -1,6 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const categories = document.querySelectorAll('.category');
     const categoryHeadings = Array.from(document.querySelectorAll('.category-heading'));
+    let isScrollLocked = false;
     
     // Click handling for categories
     categories.forEach(category => {
@@ -12,10 +13,18 @@ document.addEventListener('DOMContentLoaded', () => {
             const heading = document.getElementById(categoryId);
             
             if (heading) {
+                // Lock scroll updates temporarily
+                isScrollLocked = true;
+                
                 heading.scrollIntoView({
                     behavior: 'smooth',
                     block: 'start'
                 });
+
+                // Release the lock after the scroll animation (roughly 1 second)
+                setTimeout(() => {
+                    isScrollLocked = false;
+                }, 1000);
             }
         });
     });
@@ -25,6 +34,12 @@ document.addEventListener('DOMContentLoaded', () => {
     let lastKnownScrollPosition = 0;
 
     function updateActiveCategory() {
+        // Don't update if scroll is locked
+        if (isScrollLocked) {
+            ticking = false;
+            return;
+        }
+
         const viewportHeight = window.innerHeight;
         const viewportMiddle = window.scrollY + (viewportHeight / 3); // Bias towards upper third
 
