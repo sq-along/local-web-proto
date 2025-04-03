@@ -4,6 +4,11 @@ document.addEventListener('DOMContentLoaded', () => {
     let lastClickTime = 0;
     const SCROLL_LOCK_DURATION = 1000; // 1 second lock duration
     
+    // Set first category as active initially instead of calculating based on scroll
+    if (categories.length > 0) {
+        categories[0].classList.add('active');
+    }
+    
     // Click handling for categories
     categories.forEach(category => {
         category.addEventListener('click', () => {
@@ -83,6 +88,5 @@ document.addEventListener('DOMContentLoaded', () => {
     // Listen for scroll events
     window.addEventListener('scroll', onScroll, { passive: true });
 
-    // Initial check
-    updateActiveCategory();
+    // Removed initial updateActiveCategory() call since we're setting the first category active by default
 });
