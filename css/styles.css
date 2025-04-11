@@ -216,7 +216,7 @@ body {
     font-weight: 600;
     letter-spacing: -0.025rem;
     color: #333;
-    margin: 0 0 16px 0;
+    margin: 0 0 8px 0;
 }
 
 .button-group {
@@ -282,9 +282,9 @@ body {
 
 .menu-period h2 {
     font-size: 20px;
-    font-weight: 700;
+    font-weight: 600;
     letter-spacing: -0.01rem;
-    color: #333;
+    color: #444;
     margin-bottom: 0;
 }
 
@@ -293,13 +293,16 @@ body {
     font-size: 0.9rem;
 }
 
+.category-container {
+    margin-left: -16px;
+}
+
 .category {
     display: flex;
     align-items: center;
-    gap: 0.75rem;
-    padding: 0.75rem;
+    padding: 8px 16px;
     margin: 0 0 4px 0;
-    border-radius: 12px;
+    border-radius: 1000px;
     background-color: transparent;
     cursor: pointer;
     transition: background-color 0.2s;
@@ -311,14 +314,8 @@ body {
 }
 
 .category.active {
-    background-color: #EDE7F6;
-    color: #6200EE;
-}
-
-.category img {
-    width: 32px;
-    height: 32px;
-    border-radius: 8px;
+    background-color: #333;
+    color: white;
 }
 
 .category span {
@@ -338,7 +335,7 @@ body {
 .category-heading {
     margin: 8px;
     padding: 8px 0;
-    border-bottom: 1px solid rgba(0,0,0,0.05);
+    /* border-bottom: 1px solid rgba(0,0,0,0.05); */
 }
 
 .category-heading:first-of-type {
@@ -396,12 +393,12 @@ body {
 }
 
 .item-details {
-    padding: 1rem 0;
+    padding: 8px;
 }
 
 .item-details h3 {
-    font-size: 1.1rem;
-    margin-bottom: 0.5rem;
+    font-size: 1rem;
+    margin-bottom: 4px;
     font-weight: 600;
 }
 
@@ -429,7 +426,7 @@ body {
 }
 
 .discounted {
-    color: #6200EE;
+    color: #000;
     font-weight: 600;
 }
 
@@ -667,6 +664,18 @@ body {
         background-color: black;
     }
 
+    .menu-header {
+        display: none;
+    }
+
+    .menu-period {
+        padding: 24px 0 0 24px;
+    }
+
+    .category-heading:first-of-type {
+        display: none;
+    }
+
     .layout-grid {
         background-color: white;
         border-radius: 64px 64px 0 0;
@@ -695,29 +704,39 @@ body {
 
     .main-content {
         grid-column: 1 / -1;
-        padding: 16px;
+        padding: 0 8px;
     }
 
     .menu-categories {
-        margin: 0 0 24px 0;
-        padding: 24px 0 0 24px;
+        margin: 0 0 8px 0;
+        padding: 0;
         background: white;
         z-index: 100;
     }
+
+    .category-container::-webkit-scrollbar {
+          display: none;
+        }
 
     .category-container {
         display: flex;
         flex-direction: row;
         overflow-x: scroll;
-        padding: 0;
+        padding: 0 0 0 16px;
         margin: 0;
-        gap: 0.75rem;
+        gap: 8px;
         background: white;
     }
 
     .category {
         flex-shrink: 0;
         white-space: nowrap;
+        background-color: #F5F5F5;
+        padding: 4px 12px;
+    }
+
+    .category.active {
+        background-color: #333;
     }
 
     .menu-grid {
