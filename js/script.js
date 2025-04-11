@@ -164,51 +164,33 @@ document.addEventListener('DOMContentLoaded', () => {
         ticking = false;
     }
 
-    // iOS Status Bar Color Change on Scroll
-    const logoContainer = document.querySelector('.logo-container');
-    const metaThemeColorDefault = document.querySelector('meta[id="metaThemeColorDefault"]');
-    const metaThemeColorLight = document.querySelector('meta[id="metaThemeColorLight"]');
-    const metaThemeColorDark = document.querySelector('meta[id="metaThemeColorDark"]');
-    let isStatusBarWhite = false;
-
-    function updateStatusBarColor() {
-        if (!logoContainer || !metaThemeColorDefault || !metaThemeColorLight || !metaThemeColorDark) return;
-        
-        const rect = logoContainer.getBoundingClientRect();
-        const shouldBeWhite = rect.bottom <= 0;
-        
-        if (shouldBeWhite !== isStatusBarWhite) {
-            isStatusBarWhite = shouldBeWhite;
-            
-            setTimeout(() => {
-                if (isStatusBarWhite) {
-                    // When scrolled past logo, use white for light mode, black for dark mode
-                    metaThemeColorDefault.setAttribute('content', '#ffffff');
-                    metaThemeColorLight.setAttribute('content', '#ffffff');
-                    metaThemeColorDark.setAttribute('content', '#000000');
-                } else {
-                    // When on logo, use purple for all modes
-                    metaThemeColorDefault.setAttribute('content', '#450CF5');
-                    metaThemeColorLight.setAttribute('content', '#450CF5');
-                    metaThemeColorDark.setAttribute('content', '#450CF5');
-                }
-            }, 250);
-        }
-    }
-
-    // Add status bar color update to the scroll handler
     function onScroll() {
         lastKnownScrollPosition = window.scrollY;
         
         if (!ticking) {
             window.requestAnimationFrame(() => {
                 updateActiveCategory();
-                if (window.innerWidth <= 800) {
-                    updateStatusBarColor();
-                }
+                updateThemeColor();
                 ticking = false;
             });
             ticking = true;
+        }
+    }
+
+    // Theme color update
+    const logoContainer = document.querySelector('.logo-container');
+    const metaThemeColor = document.querySelector('meta[id="metaThemeColorDefault"]');
+    let isWhiteTheme = false;
+
+    function updateThemeColor() {
+        if (!logoContainer || !metaThemeColor) return;
+        
+        const rect = logoContainer.getBoundingClientRect();
+        const shouldBeWhite = rect.bottom <= 0;
+        
+        if (shouldBeWhite !== isWhiteTheme) {
+            isWhiteTheme = shouldBeWhite;
+            metaThemeColor.setAttribute('content', shouldBeWhite ? '#fff' : '#450CF5');
         }
     }
 

@@ -28,6 +28,7 @@ body {
 }
 
 .restaurant-info {
+    margin-top: 0.2px; /* Forces white status bar */
     grid-area: business;
     padding: 24px;
     background-color: #fff;
@@ -816,4 +817,9 @@ body {
     .category-heading:first-of-type {
         display: none;
     }
+}
+
+.force-refresh {
+    -webkit-transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
 }
