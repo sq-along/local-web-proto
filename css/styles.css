@@ -28,7 +28,7 @@ body {
 }
 
 .restaurant-info {
-    margin-top: 0.2px; /* Hack to forces status bar change */
+    transform: translateY(0.001px); /* Hack to force status bar change */
     grid-area: business;
     padding: 24px;
     background-color: #fff;
