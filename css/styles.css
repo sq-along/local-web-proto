@@ -410,6 +410,10 @@ body {
     font-size: 0.9rem;
     margin-bottom: 0.75rem;
     line-height: 1.4;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
 }
 
 .price {
@@ -691,6 +695,7 @@ body {
 
     .main-content {
         grid-column: 1 / -1;
+        padding: 16px;
     }
 
     .menu-categories {
@@ -713,5 +718,14 @@ body {
     .category {
         flex-shrink: 0;
         white-space: nowrap;
+    }
+
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4px;
+    }
+
+    .item-details p {
+        -webkit-line-clamp: 2;
     }
 }
