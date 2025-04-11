@@ -298,11 +298,16 @@ body {
     align-items: center;
     gap: 0.75rem;
     padding: 0.75rem;
+    margin: 0 0 4px 0;
     border-radius: 12px;
     background-color: transparent;
     cursor: pointer;
     transition: background-color 0.2s;
     color: #333;
+}
+
+.category:hover {
+    background-color: #F5F5F5;
 }
 
 .category.active {
@@ -674,6 +679,10 @@ body {
     .logo-container {
         height: 400px;
         border-radius: 63px 63px 32px 32px;
+    }
+
+    .location-picker span {
+        display: none;
     }
 
     .restaurant-details, .menu-categories {
