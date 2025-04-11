@@ -4,103 +4,99 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta id="metaThemeColorDefault" name="theme-color" content="#450CF5">
+    <meta id="metaThemeColorLight" name="theme-color" media="(prefers-color-scheme: light)" content="#fff" />
+    <meta id="metaThemeColorDark" name="theme-color" media="(prefers-color-scheme: dark)" content="#000" />
     <title>Rangoon Bistro - Portland, OR</title>
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/script.js"></script>
 </head>
 <body>
-    <div class="layout-grid">
-        <aside class="sidebar">
-            <section class="restaurant-info">
-                <div class="logo-container">
-                    <img class="restaurant-logo" src="images/logo.png" alt="Rangoon Bistro Logo">
-                </div>
-                <div class="restaurant-details">
-                    <div class="restaurant-title-row">
-                        <h1>Rangoon Bistro</h1>
-                        <div class="button-group">
-                            <button class="more-info">···</button>
-                            <button class="add-to-local">
-                                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M6 1V11M1 6H11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                                </svg>
-                            </button>
-                        </div>
+        <section class="restaurant-info">
+            <div class="logo-container">
+                <img class="restaurant-logo" src="images/logo.png" alt="Rangoon Bistro Logo">
+            </div>
+            <div class="restaurant-details">
+                <div class="restaurant-title-row">
+                    <h1>Rangoon Bistro</h1>
+                    <div class="button-group">
+                        <button class="more-info">···</button>
+                        <button class="add-to-local">
+                            <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M6 1V11M1 6H11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            </svg>
+                        </button>
                     </div>
-                    <p class="restaurant-type">Burmese · <span>Open until 10 PM</span></p>
-                    <p class="restaurant-address">3747 N Mississippi Ave, Portland</p>
                 </div>
-            </section>
+                <p class="restaurant-type">Burmese · <span>Open until 10 PM</span></p>
+                <button class="restaurant-address" id="locationButton">
+                    3747 N Mississippi Ave, Portland
+                    <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
+                <div class="location-popover" id="locationPopover">
+                    <div class="location-list">
+                        <label class="location-option">
+                            <div class="location-details">
+                                <h4>Rangoon Bistro, Mississippi</h4>
+                                <p>3747 N Mississippi Ave, Portland</p>
+                            </div>
+                            <input type="radio" name="location" value="mississippi" checked>
+                        </label>
+                        <label class="location-option">
+                            <div class="location-details">
+                                <h4>Rangoon Bistro, Downtown</h4>
+                                <p>123 SW Broadway, Portland</p>
+                            </div>
+                            <input type="radio" name="location" value="downtown">
+                        </label>
+                        <label class="location-option">
+                            <div class="location-details">
+                                <h4>Rangoon Bistro, Pearl District</h4>
+                                <p>456 NW 23rd Ave, Portland</p>
+                            </div>
+                            <input type="radio" name="location" value="pearl">
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-            <section class="menu-categories">
-                <div class="menu-period">
-                    <h2>Menu</h2>
-                    <!-- <p class="time-slot">11:00am — 3:00pm</p> -->
+        <section class="menu-categories">
+            <div class="menu-period">
+                <h2>Menu</h2>
+                <!-- <p class="time-slot">11:00am — 3:00pm</p> -->
+            </div>
+            <div class="category-container">
+                <div class="category active" data-category="thoke">
+                    <span>Thoke</span>
                 </div>
-                <div class="category-container">
-                    <div class="category active" data-category="thoke">
-                        <span>Thoke</span>
-                    </div>
-                    <div class="category" data-category="noodles">
-                        <span>Noodles</span>
-                    </div>
-                    <div class="category" data-category="curry">
-                        <span>Curry</span>
-                    </div>
-                    <div class="category" data-category="fried-chicken">
-                        <span>Fried Chicken</span>
-                    </div>
-                    <div class="category" data-category="sides">
-                        <span>Sides</span>
-                    </div>
-                    <div class="category" data-category="cocktails">
-                        <span>Cocktails</span>
-                    </div>
-                    <div class="category" data-category="non-alcoholic">
-                        <span>Non-Alcoholic</span>
-                    </div>
+                <div class="category" data-category="noodles">
+                    <span>Noodles</span>
                 </div>
-            </section>
-        </aside>
+                <div class="category" data-category="curry">
+                    <span>Curry</span>
+                </div>
+                <div class="category" data-category="fried-chicken">
+                    <span>Fried Chicken</span>
+                </div>
+                <div class="category" data-category="sides">
+                    <span>Sides</span>
+                </div>
+                <div class="category" data-category="cocktails">
+                    <span>Cocktails</span>
+                </div>
+                <div class="category" data-category="non-alcoholic">
+                    <span>Non-Alcoholic</span>
+                </div>
+            </div>
+        </section>
 
         <main class="main-content">
             <header class="menu-header">
-                <div class="location-picker">
-                    <span>Pickup from</span>
-                    <button class="location-button" id="locationButton">
-                        <img src="icons/location-icon.svg" alt="Location" class="header-icon">
-                        Rangoon Bistro, Mississippi
-                        <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </button>
-                    <div class="location-popover" id="locationPopover">
-                        <div class="location-list">
-                            <label class="location-option">
-                                <div class="location-details">
-                                    <h4>Rangoon Bistro, Mississippi</h4>
-                                    <p>3747 N Mississippi Ave, Portland</p>
-                                </div>
-                                <input type="radio" name="location" value="mississippi" checked>
-                            </label>
-                            <label class="location-option">
-                                <div class="location-details">
-                                    <h4>Rangoon Bistro, Downtown</h4>
-                                    <p>123 SW Broadway, Portland</p>
-                                </div>
-                                <input type="radio" name="location" value="downtown">
-                            </label>
-                            <label class="location-option">
-                                <div class="location-details">
-                                    <h4>Rangoon Bistro, Pearl District</h4>
-                                    <p>456 NW 23rd Ave, Portland</p>
-                                </div>
-                                <input type="radio" name="location" value="pearl">
-                            </label>
-                        </div>
-                    </div>
-                </div>
+                <div></div>
                 <button class="cart-button">
                     <img src="icons/cart-icon.svg" alt="Cart" class="header-icon">
                     <span>Cart</span>
@@ -714,7 +710,6 @@
                 </div>
             </section>
         </main>
-    </div>
     <div class="cart-blade" id="cartBlade">
         <header class="blade-header">
             <h2>Cart</h2>

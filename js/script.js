@@ -87,7 +87,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     
     categories.forEach(category => {
-        category.addEventListener('click', () => {
+        const handler = (e) => {
+            e.preventDefault();
             categories.forEach(c => c.classList.remove('active'));
             category.classList.add('active');
             
@@ -96,12 +97,24 @@ document.addEventListener('DOMContentLoaded', () => {
             
             if (heading) {
                 lastClickTime = Date.now();
-                heading.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
+                // Special handling for first category to ensure we scroll to the very top
+                if (categoryId === 'thoke') {
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'smooth'
+                    });
+                } else {
+                    heading.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             }
-        });
+        };
+
+        // Add both click and touch events
+        category.addEventListener('click', handler);
+        category.addEventListener('touchend', handler);
     });
 
     let ticking = false;
@@ -113,42 +126,86 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        const viewportHeight = window.innerHeight;
-        const viewportMiddle = window.scrollY + (viewportHeight / 3);
-
-        let closestSection = null;
-        let closestDistance = Infinity;
-
-        categoryHeadings.forEach(heading => {
+        // Find all headings and their positions
+        const headingPositions = categoryHeadings.map(heading => {
             const rect = heading.getBoundingClientRect();
-            const absoluteTop = window.scrollY + rect.top;
-            const distance = Math.abs(absoluteTop - viewportMiddle);
-
-            if (distance < closestDistance) {
-                closestDistance = distance;
-                closestSection = heading;
-            }
+            return {
+                id: heading.id,
+                top: rect.top,
+                bottom: rect.bottom,
+                height: rect.height
+            };
         });
 
-        if (closestSection) {
-            const categoryId = closestSection.id;
+        // Find the first heading that's at or near the top of the viewport
+        const activeHeading = headingPositions.find(pos => 
+            pos.top <= 100 && pos.bottom > 0
+        );
+
+        if (activeHeading) {
+            const categoryId = activeHeading.id;
             const activeCategory = document.querySelector(`.category[data-category="${categoryId}"]`);
             
             if (activeCategory && !activeCategory.classList.contains('active')) {
                 categories.forEach(c => c.classList.remove('active'));
                 activeCategory.classList.add('active');
+
+                // Only scroll the category into view on mobile
+                if (window.innerWidth <= 800) {
+                    activeCategory.scrollIntoView({
+                        behavior: 'smooth',
+                        inline: 'center',
+                        block: 'nearest'
+                    });
+                }
             }
         }
 
         ticking = false;
     }
 
+    // iOS Status Bar Color Change on Scroll
+    const logoContainer = document.querySelector('.logo-container');
+    const metaThemeColorDefault = document.querySelector('meta[id="metaThemeColorDefault"]');
+    const metaThemeColorLight = document.querySelector('meta[id="metaThemeColorLight"]');
+    const metaThemeColorDark = document.querySelector('meta[id="metaThemeColorDark"]');
+    let isStatusBarWhite = false;
+
+    function updateStatusBarColor() {
+        if (!logoContainer || !metaThemeColorDefault || !metaThemeColorLight || !metaThemeColorDark) return;
+        
+        const rect = logoContainer.getBoundingClientRect();
+        const shouldBeWhite = rect.bottom <= 0;
+        
+        if (shouldBeWhite !== isStatusBarWhite) {
+            isStatusBarWhite = shouldBeWhite;
+            
+            setTimeout(() => {
+                if (isStatusBarWhite) {
+                    // When scrolled past logo, use white for light mode, black for dark mode
+                    metaThemeColorDefault.setAttribute('content', '#ffffff');
+                    metaThemeColorLight.setAttribute('content', '#ffffff');
+                    metaThemeColorDark.setAttribute('content', '#000000');
+                } else {
+                    // When on logo, use purple for all modes
+                    metaThemeColorDefault.setAttribute('content', '#450CF5');
+                    metaThemeColorLight.setAttribute('content', '#450CF5');
+                    metaThemeColorDark.setAttribute('content', '#450CF5');
+                }
+            }, 250);
+        }
+    }
+
+    // Add status bar color update to the scroll handler
     function onScroll() {
         lastKnownScrollPosition = window.scrollY;
         
         if (!ticking) {
             window.requestAnimationFrame(() => {
                 updateActiveCategory();
+                if (window.innerWidth <= 800) {
+                    updateStatusBarColor();
+                }
                 ticking = false;
             });
             ticking = true;
