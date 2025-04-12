@@ -63,6 +63,7 @@
 .restaurant-address {
     font: var(--font-small);
     color: var(--color-text);
+    text-align: left;
     background: none;
     border: none;
     padding: 0;
