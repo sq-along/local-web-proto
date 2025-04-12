@@ -1,12 +1,30 @@
+// Helper function to calculate overlay color
+function overlayWithBlack(baseColor, opacity) {
+    // Convert hex to RGB
+    const r = parseInt(baseColor.slice(1,3), 16);
+    const g = parseInt(baseColor.slice(3,5), 16);
+    const b = parseInt(baseColor.slice(5,7), 16);
+    
+    // Calculate overlay
+    const black = 0;
+    const overlayR = Math.round(r * (1 - opacity) + black * opacity);
+    const overlayG = Math.round(g * (1 - opacity) + black * opacity);
+    const overlayB = Math.round(b * (1 - opacity) + black * opacity);
+    
+    // Convert back to hex
+    return '#' + [overlayR, overlayG, overlayB]
+        .map(x => x.toString(16).padStart(2, '0'))
+        .join('');
+}
+
 const LocationSheet = {
     init() {
         this.locationButton = document.getElementById('locationButton');
         this.locationSheet = document.getElementById('locationSheet');
         this.closeButton = document.getElementById('closeLocationSheet');
-        this.cancelButton = document.getElementById('cancelLocationSheet');
-        this.confirmButton = document.getElementById('confirmLocation');
         this.backdrop = this.locationSheet?.querySelector('.sheet-backdrop');
         this.locationOptions = document.querySelectorAll('.location-option input');
+        this.metaThemeColor = document.querySelector('meta[id="metaThemeColorDefault"]');
         
         this.isMobile = window.innerWidth <= 800;
         this.bindEvents();
@@ -23,8 +41,6 @@ const LocationSheet = {
         this.locationButton.addEventListener('click', (e) => this.open(e));
         this.closeButton?.addEventListener('click', () => this.close());
         this.backdrop?.addEventListener('click', () => this.close());
-        this.cancelButton?.addEventListener('click', () => this.close());
-        this.confirmButton?.addEventListener('click', () => this.handleConfirm());
 
         this.locationOptions?.forEach(option => {
             option.addEventListener('change', (e) => this.handleSelection(e));
@@ -36,11 +52,25 @@ const LocationSheet = {
         e.stopPropagation();
         this.locationSheet.classList.add('active');
         document.body.style.overflow = 'hidden';
+
+        // Handle theme color on mobile
+        if (this.isMobile && this.metaThemeColor) {
+            // Get the current color (whether it's brand color or white)
+            this.originalColor = this.metaThemeColor.getAttribute('content');
+            const overlaidColor = overlayWithBlack(this.originalColor, 0.25);
+            this.metaThemeColor.setAttribute('content', overlaidColor);
+        }
     },
 
     close() {
         this.locationSheet.classList.remove('active');
         document.body.style.overflow = '';
+
+        // Restore original theme color on mobile
+        if (this.isMobile && this.metaThemeColor && this.originalColor) {
+            this.metaThemeColor.setAttribute('content', this.originalColor);
+            this.originalColor = null; // Clear the stored color
+        }
     },
 
     handleSelection(e) {
@@ -58,13 +88,6 @@ const LocationSheet = {
             setTimeout(() => {
                 this.close();
             }, 300); // 300ms delay for a more noticeable pause
-        }
-    },
-
-    handleConfirm() {
-        if (this.selectedLocation) {
-            this.updateLocationButton(this.selectedLocation.address);
-            this.close();
         }
     },
 

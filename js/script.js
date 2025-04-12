@@ -156,7 +156,7 @@ document.addEventListener('DOMContentLoaded', () => {
         
         if (shouldBeWhite !== isWhiteTheme) {
             isWhiteTheme = shouldBeWhite;
-            metaThemeColor.setAttribute('content', shouldBeWhite ? '#fff' : '#450CF5');
+            metaThemeColor.setAttribute('content', shouldBeWhite ? '#ffffff' : '#450CF5');
         }
     }
 
