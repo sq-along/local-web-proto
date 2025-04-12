@@ -44,7 +44,7 @@
                 </div>
                 <p class="restaurant-type">Burmese · <span>Open until 10 PM</span></p>
                 <button class="restaurant-address" id="locationButton">
-                    3747 N Mississippi Ave, Portland
+                    3747 N Mississippi Ave
                     <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
@@ -721,12 +721,13 @@
     <div class="location-sheet" id="locationSheet">
         <div class="sheet-backdrop"></div>
         <div class="sheet-container">
+            <div class="sheet-grabber"></div>
             <button class="close-sheet" id="closeLocationSheet">
-                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M6 1V11M1 6H11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-                    </svg>
-                </button>
-            <div class="sheet-header">
+                <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M6 1V11M1 6H11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                </svg>
+            </button>
+            <div class="sheet-header desktop-only">
                 <div class="sheet-header-content">
                     <h2>Choose your pickup location</h2>
                     <p class="sheet-subtitle">Before browsing the menu, select where you'd like to grab your order</p>
@@ -736,6 +737,15 @@
                 <div class="location-list">
                     <label class="location-option">
                         <div class="location-details">
+                            <h4>Rangoon Bistro, Downtown</h4>
+                            <p>2311 SE 50th</p>
+                            <p>Portland, OR 97215</p>
+                            <p class="location-meta"><span>Open</span> · Closes at 10 PM</p>
+                        </div>
+                        <input type="radio" name="location" value="downtown">
+                    </label>
+                    <label class="location-option">
+                        <div class="location-details">
                             <h4>Rangoon Bistro, Mississippi</h4>
                             <p>3747 N Mississippi Ave</p>
                             <p>Portland, OR 97227</p>
@@ -743,18 +753,9 @@
                         </div>
                         <input type="radio" name="location" value="mississippi" checked>
                     </label>
-                    <label class="location-option">
-                        <div class="location-details">
-                            <h4>Rangoon Bistro, Downtown</h4>
-                            <p>123 SW Broadway</p>
-                            <p>Portland, OR 97215</p>
-                            <p class="location-meta"><span>Open</span> · Closes at 10 PM</p>
-                        </div>
-                        <input type="radio" name="location" value="downtown">
-                    </label>
                 </div>
             </div>
-            <div class="sheet-footer">
+            <div class="sheet-footer desktop-only">
                 <button class="sheet-button sheet-button--secondary" id="cancelLocationSheet">Cancel</button>
                 <button class="sheet-button sheet-button--primary" id="confirmLocation">Confirm location</button>
             </div>
