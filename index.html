@@ -3,14 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta id="metaThemeColorDefault" name="theme-color" content="#450CF5">
     <meta id="metaThemeColorLight" name="theme-color" media="(prefers-color-scheme: light)" content="#fff">
     <meta id="metaThemeColorDark" name="theme-color" media="(prefers-color-scheme: dark)" content="#000">
     <title>Rangoon Bistro - Portland, OR</title>
-    <link rel="stylesheet" href="css/styles.css">
-    <script src="js/script.js"></script>
+    <!-- Base Styles -->
+    <link rel="stylesheet" href="css/base/variables.css">
+    <link rel="stylesheet" href="css/base/reset.css">
+    
+    <!-- Layout -->
+    <link rel="stylesheet" href="css/layout/main-content.css">
+    
+    <!-- Components -->
+    <link rel="stylesheet" href="css/components/restaurant-info.css">
+    <link rel="stylesheet" href="css/components/menu-header.css">
+    <link rel="stylesheet" href="css/components/menu-categories.css">
+    <link rel="stylesheet" href="css/components/menu-items.css">
+    <link rel="stylesheet" href="css/components/cart-blade.css">
+    <link rel="stylesheet" href="css/components/item-modal.css">
+    <link rel="stylesheet" href="css/components/location-sheet.css">
 </head>
 <body>
         <section class="restaurant-info">
@@ -36,31 +49,6 @@
                         <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
                 </button>
-                <div class="location-popover" id="locationPopover">
-                    <div class="location-list">
-                        <label class="location-option">
-                            <div class="location-details">
-                                <h4>Rangoon Bistro, Mississippi</h4>
-                                <p>3747 N Mississippi Ave, Portland</p>
-                            </div>
-                            <input type="radio" name="location" value="mississippi" checked>
-                        </label>
-                        <label class="location-option">
-                            <div class="location-details">
-                                <h4>Rangoon Bistro, Downtown</h4>
-                                <p>123 SW Broadway, Portland</p>
-                            </div>
-                            <input type="radio" name="location" value="downtown">
-                        </label>
-                        <label class="location-option">
-                            <div class="location-details">
-                                <h4>Rangoon Bistro, Pearl District</h4>
-                                <p>456 NW 23rd Ave, Portland</p>
-                            </div>
-                            <input type="radio" name="location" value="pearl">
-                        </label>
-                    </div>
-                </div>
             </div>
         </section>
 
@@ -710,6 +698,9 @@
                 </div>
             </section>
         </main>
+    </div>
+    <div class="blade-overlay" id="bladeOverlay"></div>
+
     <div class="cart-blade" id="cartBlade">
         <header class="blade-header">
             <h2>Cart</h2>
@@ -726,6 +717,51 @@
             </div>
         </div>
     </div>
-    <div class="blade-overlay" id="bladeOverlay"></div>
+
+    <div class="location-sheet" id="locationSheet">
+        <div class="sheet-backdrop"></div>
+        <div class="sheet-container">
+            <button class="close-sheet" id="closeLocationSheet">
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 1V11M1 6H11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                </button>
+            <div class="sheet-header">
+                <div class="sheet-header-content">
+                    <h2>Choose your pickup location</h2>
+                    <p class="sheet-subtitle">Before browsing the menu, select where you'd like to grab your order</p>
+                </div>
+            </div>
+            <div class="sheet-content">
+                <div class="location-list">
+                    <label class="location-option">
+                        <div class="location-details">
+                            <h4>Rangoon Bistro, Mississippi</h4>
+                            <p>3747 N Mississippi Ave</p>
+                            <p>Portland, OR 97227</p>
+                            <p class="location-meta"><span>Open</span> · Closes at 10 PM</p>
+                        </div>
+                        <input type="radio" name="location" value="mississippi" checked>
+                    </label>
+                    <label class="location-option">
+                        <div class="location-details">
+                            <h4>Rangoon Bistro, Downtown</h4>
+                            <p>123 SW Broadway</p>
+                            <p>Portland, OR 97215</p>
+                            <p class="location-meta"><span>Open</span> · Closes at 10 PM</p>
+                        </div>
+                        <input type="radio" name="location" value="downtown">
+                    </label>
+                </div>
+            </div>
+            <div class="sheet-footer">
+                <button class="sheet-button sheet-button--secondary" id="cancelLocationSheet">Cancel</button>
+                <button class="sheet-button sheet-button--primary" id="confirmLocation">Confirm location</button>
+            </div>
+        </div>
+    </div>
+    <!-- Load scripts at the end of body -->
+    <script src="js/script.js"></script>
+    <script src="js/location-sheet.js"></script>
 </body>
 </html>

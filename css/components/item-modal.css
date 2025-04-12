@@ -1,0 +1,107 @@
+/* Item Modal */
+.item-modal {
+    position: fixed;
+    inset: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1002;
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.3s ease-in-out;
+    padding: var(--spacing-2xl);
+}
+
+.item-modal.active {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.modal-content {
+    background: var(--color-background);
+    border-radius: var(--radius-lg);
+    width: 90%;
+    max-width: 600px;
+    max-height: 90vh;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transform: translateY(20px);
+    transition: transform 0.3s ease-in-out;
+}
+
+.item-modal.active .modal-content {
+    transform: translateY(0);
+}
+
+.close-modal {
+    position: absolute;
+    top: var(--spacing-md);
+    right: var(--spacing-md);
+    background: var(--color-background);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text);
+    z-index: 1;
+    box-shadow: var(--shadow-sm);
+}
+
+.modal-image-container {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+}
+
+.modal-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.modal-details {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+}
+
+.modal-details h2 {
+    font: 600 1.5rem/1.2 var(--font-family);
+    color: var(--color-text);
+    margin: 0;
+}
+
+.modal-details p {
+    color: var(--color-text-subtle);
+    font: var(--font-small);
+    margin: 0;
+    line-height: 1.6;
+}
+
+.modal-price {
+    font: 600 1.25rem/1.2 var(--font-family);
+    color: var(--color-text);
+}
+
+.add-to-cart {
+    background: var(--color-text);
+    color: var(--color-background);
+    border: none;
+    border-radius: var(--radius-full);
+    padding: 0.75rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: var(--spacing-sm);
+}
+
+.add-to-cart:hover {
+    background: #444;
+}

@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function updateHeaderShadow() {
         const shouldShowShadow = window.scrollY > 0;
         
-        if (shouldShowShadow !== headerScrolled) {
+        if (shouldShowShadow !== headerScrolled && menuHeader) {
             headerScrolled = shouldShowShadow;
             menuHeader.classList.toggle('scrolled', headerScrolled);
         }
@@ -16,65 +16,31 @@ document.addEventListener('DOMContentLoaded', () => {
         window.requestAnimationFrame(updateHeaderShadow);
     }, { passive: true });
 
-    // Location Popover
-    const locationButton = document.getElementById('locationButton');
-    const locationPopover = document.getElementById('locationPopover');
-    const locationOptions = document.querySelectorAll('.location-option input');
-
-    // Toggle popover
-    locationButton.addEventListener('click', (e) => {
-        e.stopPropagation();
-        locationPopover.classList.toggle('active');
-    });
-
-    // Close popover when clicking outside
-    document.addEventListener('click', (e) => {
-        if (!locationPopover.contains(e.target) && e.target !== locationButton) {
-            locationPopover.classList.remove('active');
-        }
-    });
-
-    // Handle location selection
-    locationOptions.forEach(option => {
-        option.addEventListener('change', (e) => {
-            const label = e.target.closest('.location-option');
-            const locationName = label.querySelector('h4').textContent;
-            
-            // Update button text
-            locationButton.innerHTML = `
-                <img src="icons/location-icon.svg" alt="Location" class="header-icon">
-                ${locationName}
-                <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                </svg>
-            `;
-            
-            // Close popover
-            locationPopover.classList.remove('active');
-        });
-    });
-
     // Cart Blade
     const cartButton = document.querySelector('.cart-button');
     const cartBlade = document.getElementById('cartBlade');
     const closeCartButton = document.getElementById('closeCartBlade');
     const bladeOverlay = document.getElementById('bladeOverlay');
 
+    // Define cart functions
     function openCartBlade() {
+        if (!cartBlade || !bladeOverlay) return;
         cartBlade.classList.add('active');
         bladeOverlay.classList.add('active');
         document.body.style.overflow = 'hidden';
     }
 
     function closeCartBlade() {
+        if (!cartBlade || !bladeOverlay) return;
         cartBlade.classList.remove('active');
         bladeOverlay.classList.remove('active');
         document.body.style.overflow = '';
     }
 
-    cartButton.addEventListener('click', openCartBlade);
-    closeCartButton.addEventListener('click', closeCartBlade);
-    bladeOverlay.addEventListener('click', closeCartBlade);
+    // Add cart event listeners if elements exist
+    cartButton?.addEventListener('click', openCartBlade);
+    closeCartButton?.addEventListener('click', closeCartBlade);
+    bladeOverlay?.addEventListener('click', closeCartBlade);
 
     // Category navigation
     const categories = document.querySelectorAll('.category');

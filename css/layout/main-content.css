@@ -1,0 +1,34 @@
+/* Main Content Area */
+.main-content {
+    grid-area: menu;
+    background-color: var(--color-background);
+    padding: var(--spacing-md) 0 0 0;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* Menu Section */
+.menu-section h2 {
+    margin-bottom: 0.25rem;
+}
+
+.category-heading {
+    padding: var(--spacing-sm) var(--spacing-md);
+}
+
+.category-heading:first-of-type {
+    margin-top: 0;
+}
+
+@media (max-width: 800px) {
+    .main-content {
+        padding: 0 var(--spacing-sm);
+    }
+
+    .category-heading:first-of-type {
+        display: none;
+    }
+}
