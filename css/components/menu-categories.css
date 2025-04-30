@@ -47,7 +47,7 @@
 .category::before {
     content: '';
     position: absolute;
-    left: 0;
+    left: 4px;
     top: 50%;
     transform: translateY(-50%);
     height: 20px;
