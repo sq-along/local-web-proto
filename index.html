@@ -43,13 +43,7 @@
                         </button>
                     </div>
                 </div>
-                <p class="restaurant-type">Burmese · <span>Open until 10 PM</span></p>
-                <button class="restaurant-address" id="locationButton">
-                    3747 N Mississippi Ave
-                    <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-                    </svg>
-                </button>
+                <p class="restaurant-type">$rangoonbistro · <span>Open until 10 PM</span></p>
             </div>
         </section>
 
@@ -88,18 +82,30 @@
             </div>
         </section>
 
-        <main class="main-content">
-            <header class="menu-header">
-                <div class="order-summary">
-                    <span class="order-items">2 Items</span>
-                    <span class="order-total">$24.50</span>
+<header class="menu-header">
+                <div class="header-left">
+                    <div class="segment-control">
+                        <button class="segment-button active">Pickup</button>
+                        <button class="segment-button">Delivery</button>
+                    </div>
+                    <button class="header-location" id="locationButton">
+                        3747 N Mississippi Ave
+                        <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </button>
                 </div>
-                <button class="cart-button">
-                    <img src="icons/cart-icon.svg" alt="Cart" class="header-icon">
-                    <span>View Order</span>
-                </button>
+                <div class="cart-section">
+                    <button class="cart-button">
+                        <img src="icons/cart-icon.svg" alt="Cart" class="header-icon">
+                        <span>2 Items</span>
+                        <span class="bullet">•</span>
+                        <span>$24.50</span>
+                    </button>
+                </div>
             </header>
-            
+
+        <main class="main-content">
             <section class="menu-section">
                 <h3 id="thoke" class="category-heading">Thoke</h3>
                 <div class="menu-grid">
@@ -848,5 +854,6 @@
         <script src="js/scroll-behavior.js"></script>
         <script src="js/location-sheet.js"></script>
         <script src="js/menu-time-sheet.js"></script>
+        <script src="js/segment-control.js"></script>
     </body>
 </html>

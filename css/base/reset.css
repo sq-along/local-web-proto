@@ -14,13 +14,16 @@ body {
     color: var(--color-text);
     position: relative;
     display: grid;
-    padding: var(--spacing-lg);
-    gap: var(--spacing-lg);
+    padding: var(--spacing-md);
+    gap: var(--spacing-sm);
     grid-template-columns: 3fr 9fr;
-    grid-template-rows: auto 1fr;
-    grid-template-areas: 
+    grid-template-rows: auto auto auto auto;
+    grid-template-areas:
+        "business header"
         "business menu"
-        "categories menu";
+        "categories menu"
+        "blank menu"
+        "footer footer";
     min-height: 100vh;
     max-width: 100%;
 }

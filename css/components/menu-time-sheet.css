@@ -33,6 +33,73 @@
     margin-top: 2px;
 }
 
+/* Sheet Container Styles */
+.menu-time-sheet .sheet-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.25);
+    opacity: 0;
+    transition: opacity 0.4s ease-in-out;
+}
+
+.menu-time-sheet.active .sheet-backdrop {
+    opacity: 1;
+}
+
+.menu-time-sheet .sheet-container {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--color-background);
+    border-radius: var(--radius-xl) var(--radius-xl) 0 0;
+    transform: translateY(100%);
+    transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    max-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.menu-time-sheet.active .sheet-container {
+    transform: translateY(0);
+}
+
+.menu-time-sheet .sheet-grabber {
+    display: none;
+}
+
+.menu-time-sheet .close-sheet {
+    position: absolute;
+    right: var(--spacing-lg);
+    top: var(--spacing-lg);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background-color: var(--color-surface);
+    border: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--color-text);
+    transform: rotate(45deg);
+    z-index: 1;
+}
+
+.menu-time-sheet .close-sheet svg {
+    width: 12px;
+    height: 12px;
+}
+
+.menu-time-sheet .sheet-content {
+    overflow-y: auto;
+    padding: 0 var(--spacing-xl);
+    -webkit-overflow-scrolling: touch;
+    flex: 1;
+}
+
+/* Menu List Styles */
 .menu-list {
     display: flex;
     flex-direction: column;
@@ -81,4 +148,86 @@
     margin-top: var(--spacing-xs) !important;
     color: var(--color-text-subtle) !important;
     font: var(--font-small) !important;
+}
+
+/* Desktop Styles */
+@media (min-width: 801px) {
+    .menu-time-sheet .desktop-only {
+        display: block;
+    }
+
+    .menu-time-sheet .sheet-container {
+        margin: 0 auto;
+        max-width: 600px;
+        border-radius: var(--radius-xl);
+        bottom: 50%;
+        transform: translateY(calc(50% + 100vh));
+    }
+
+    .menu-time-sheet.active .sheet-container {
+        transform: translateY(50%);
+    }
+
+    .menu-time-sheet .sheet-header {
+        position: relative;
+        margin: var(--spacing-xl) var(--spacing-xl) var(--spacing-md) var(--spacing-xl);
+        padding: 0 var(--spacing-2xl) var(--spacing-md) 0;
+        border-bottom: 1px solid var(--color-border);
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        flex-shrink: 0;
+    }
+    
+    .menu-time-sheet .sheet-header-content {
+        padding-right: var(--spacing-xl);
+    }
+    
+    .menu-time-sheet .sheet-header h2 {
+        font: var(--font-heading-lg);
+        color: var(--color-text);
+        margin-bottom: var(--spacing-sm);
+    }
+    
+    .menu-time-sheet .sheet-subtitle {
+        color: var(--color-text-subtle);
+        font: var(--font-base);
+        margin: 0;
+    }
+
+    .menu-time-sheet .sheet-footer {
+        padding: var(--spacing-lg);
+        display: flex;
+        flex-direction: column;
+        gap: var(--spacing-sm);
+        flex-shrink: 0;
+    }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 800px) {
+    .menu-time-sheet .sheet-container {
+        max-height: 80vh;
+        padding-top: var(--spacing-lg);
+    }
+
+    .menu-time-sheet .sheet-content {
+        padding: var(--spacing-xl);
+    }
+
+    .menu-time-sheet .sheet-grabber {
+        display: block;
+        position: absolute;
+        top: var(--spacing-sm);
+        left: 50%;
+        transform: translateX(-50%);
+        width: 36px;
+        height: 5px;
+        background-color: #E0E0E0;
+        border-radius: 100px;
+    }
+
+    .menu-time-sheet .close-sheet {
+        display: none;
+    }
 }

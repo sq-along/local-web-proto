@@ -2,7 +2,7 @@
 .restaurant-info {
     transform: translateY(0.1px); /* Forces status bar change on iOS */
     grid-area: business;
-    padding: var(--spacing-lg);
+    padding: var(--spacing-md);
     background-color: var(--color-background);
     width: 100%;
     max-width: var(--sidebar-width);
