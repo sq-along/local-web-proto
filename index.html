@@ -24,6 +24,7 @@
     <link rel="stylesheet" href="css/components/cart-blade.css">
     <link rel="stylesheet" href="css/components/item-modal.css">
     <link rel="stylesheet" href="css/components/location-sheet.css">
+    <link rel="stylesheet" href="css/components/menu-time-sheet.css">
 </head>
 <body>
         <section class="restaurant-info">
@@ -54,7 +55,13 @@
 
         <section class="menu-categories">
             <div class="menu-period">
-                <h2>Menu</h2>
+                <h2 id="menuHeading">Lunch</h2>
+                <button id="menuTimeButton" class="menu-time-button">
+                    <span id="menuTimeDisplay">11:00 AM – 3:00 PM</span>
+                    <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1 1L5 5L9 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </button>
             </div>
             <div class="category-container">
                 <div class="category active" data-category="thoke">
@@ -778,8 +785,68 @@
                 </div>
             </div>
         </div>
+        <!-- Menu Time Sheet -->
+        <div class="menu-time-sheet" id="menuTimeSheet">
+            <div class="sheet-backdrop"></div>
+            <div class="sheet-container">
+                <div class="sheet-grabber"></div>
+                <button class="close-sheet" id="closeMenuTimeSheet">
+                    <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 1V11M1 6H11" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                </button>
+                <div class="sheet-header desktop-only">
+                    <div class="sheet-header-content">
+                        <h2>Choose menu & time</h2>
+                        <p class="sheet-subtitle">Select which menu you'd like to order from</p>
+                    </div>
+                </div>
+                <div class="sheet-content">
+                    <div class="menu-list">
+                        <label class="menu-option">
+                            <div class="menu-details">
+                                <h4>Breakfast</h4>
+                                <p>8:00 AM – 11:00 AM</p>
+                                <p class="menu-meta">12 items</p>
+                            </div>
+                            <input type="radio" name="menu-time" value="breakfast">
+                        </label>
+                        <label class="menu-option">
+                            <div class="menu-details">
+                                <h4>Lunch</h4>
+                                <p>11:00 AM – 3:00 PM</p>
+                                <p class="menu-meta">24 items</p>
+                            </div>
+                            <input type="radio" name="menu-time" value="lunch" checked>
+                        </label>
+                        <label class="menu-option">
+                            <div class="menu-details">
+                                <h4>Happy Hour</h4>
+                                <p>3:00 PM – 6:00 PM</p>
+                                <p class="menu-meta">18 items</p>
+                            </div>
+                            <input type="radio" name="menu-time" value="happy-hour">
+                        </label>
+                        <label class="menu-option">
+                            <div class="menu-details">
+                                <h4>Dinner</h4>
+                                <p>5:00 PM – 10:00 PM</p>
+                                <p class="menu-meta">32 items</p>
+                            </div>
+                            <input type="radio" name="menu-time" value="dinner">
+                        </label>
+                    </div>
+                </div>
+                <div class="sheet-footer desktop-only">
+                    <button class="sheet-button sheet-button--secondary" id="cancelMenuTimeSheet">Cancel</button>
+                    <button class="sheet-button sheet-button--primary" id="confirmMenuTime">View menu</button>
+                </div>
+            </div>
+        </div>
         <!-- Load scripts at the end of body -->
         <script src="js/script.js"></script>
+        <script src="js/scroll-behavior.js"></script>
         <script src="js/location-sheet.js"></script>
+        <script src="js/menu-time-sheet.js"></script>
     </body>
 </html>
